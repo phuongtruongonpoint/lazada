@@ -1,0 +1,44 @@
+
+<h1>Reports by shops</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shop</th>
+      <th>Total</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for product <- @shop_reports do %>
+    <tr>
+      <td><%= product.shop_id %></td>
+      <td><%= product.total_product %></td>
+
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<h1>Reports by category</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Total</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for product <- @category_reports do %>
+    <tr>
+      <td><%= product.category_id %></td>
+      <td><%= product.total_product %></td>
+
+    </tr>
+<% end %>
+  </tbody>
+</table>

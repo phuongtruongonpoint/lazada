@@ -1,0 +1,71 @@
+<h1>Search</h1>
+<%= form_for @conn, Routes.product_path(@conn, :index), [method: "get"], fn f -> %>
+
+  <%= label f, :shop_id %>
+  <%= number_input f, :shop_id %>
+  <%= error_tag f, :shop_id %>
+
+  <%= label f, :category_id %>
+  <%= number_input f, :category_id %>
+  <%= error_tag f, :category_id %>
+
+  <%= label f, :name %>
+  <%= text_input f, :name %>
+  <%= error_tag f, :name %>
+
+  <div>
+    <%= submit "Search" %>
+  </div>
+<% end %>
+
+
+
+<h1>Listing Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shop</th>
+      <th>Category</th>
+      <th>Name</th>
+      <th>Sku</th>
+      <th>Image</th>
+      <th>Price</th>
+      <th>Stock</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for product <- @products do %>
+    <tr>
+      <td><%= product.shop_id %></td>
+      <td><%= product.category_id %></td>
+      <td><%= product.name %></td>
+      <td><%= product.sku %></td>
+      <td><%= product.image %></td>
+      <td><%= product.price %></td>
+      <td><%= product.stock %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.product_path(@conn, :show, product) %></span>
+        <span><%= link "Edit", to: Routes.product_path(@conn, :edit, product) %></span>
+        <span><%= link "Delete", to: Routes.product_path(@conn, :delete, product), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+<span>
+  <%= link "Prev Page",
+      class: "button",
+      disabled: @page.page_number < 2,
+      to: Routes.product_path(@conn, :index, page: @page.page_number - 1) %>
+</span>
+<span>
+  <%= link "Next Page",
+      class: "button",
+      disabled: @page.page_number >= @page.total_pages,
+      to: Routes.product_path(@conn, :index, page: @page.page_number + 1) %>
+</span>
+<span><%= link "New Product", to: Routes.product_path(@conn, :new) %></span>

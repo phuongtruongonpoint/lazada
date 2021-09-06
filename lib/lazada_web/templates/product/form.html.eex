@@ -1,0 +1,10 @@
+<%= form_for @changeset, @action, fn f -> %>
+
+  <%= label f, :link %>
+  <%= text_input f, :link %>
+  <%= error_tag f, :link %>
+
+  <div>
+    <%= submit "Crawly" %>
+  </div>
+<% end %>

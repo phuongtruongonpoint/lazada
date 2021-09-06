@@ -1,0 +1,12 @@
+<h1>New Product</h1>
+
+<%= form_for @conn, Routes.product_path(@conn, :create), [as: :product], fn f -> %>
+
+  <%= label f, :link %>
+  <%= text_input f, :link %>
+  <%= error_tag f, :link %>
+
+  <div>
+    <%= submit "Start" %>
+  </div>
+<% end %>

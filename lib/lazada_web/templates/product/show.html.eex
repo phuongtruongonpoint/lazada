@@ -1,0 +1,43 @@
+<h1>Show Product</h1>
+
+<ul>
+
+  <li>
+    <strong>Shop:</strong>
+    <%= @product.shop_id %>
+  </li>
+
+  <li>
+    <strong>Category:</strong>
+    <%= @product.category_id %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @product.name %>
+  </li>
+
+  <li>
+    <strong>Sku:</strong>
+    <%= @product.sku %>
+  </li>
+
+  <li>
+    <strong>Image:</strong>
+    <%= @product.image %>
+  </li>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @product.price %>
+  </li>
+
+  <li>
+    <strong>Stock:</strong>
+    <%= @product.stock %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.product_path(@conn, :edit, @product) %></span>
+<span><%= link "Back", to: Routes.product_path(@conn, :index) %></span>

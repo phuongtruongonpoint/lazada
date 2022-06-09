@@ -27,18 +27,3 @@ jobs:
           labels: integration,automerge
           assignees: phuongtruongonpoint
           reviewers: phuongtruongonpoint
-
-#  automerge:
-#    needs: hotfix
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v1
-#      - id: automerge
-#        name: automerge
-#        uses: "pascalgn/automerge-action@v0.15.3"
-#        env:
-#          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-#          pull_request: "83"
-#
-#      - name: feedback
-#        run: echo "1 ${{steps.prdevelop}} ${{steps.automerge}}"

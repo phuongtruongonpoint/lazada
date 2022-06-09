@@ -10,9 +10,10 @@ on:
       - ready_for_review
       - reopened
       - unlocked
-  pull_request_review:
+  workflow_run:
+    workflows: ["Create PR for hotfix"]
     types:
-      - submitted
+      - completed
   check_suite:
     types:
       - completed

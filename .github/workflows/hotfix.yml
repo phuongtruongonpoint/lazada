@@ -5,7 +5,7 @@ on:
       - main
     types: [opened]
 jobs:
-  hotfix:
+  hotfix-PR-integration:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -18,6 +18,16 @@ jobs:
           labels: integration,automerge
           assignees: phuongtruongonpoint
           reviewers: phuongtruongonpoint
+
+      - uses: "pascalgn/automerge-action@v0.15.3"
+        name: automerge
+        env:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+  hotfix-PR-develop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
       - uses: onpointvn/create-pull-request-action@v1
         name: Create PR to develop
         with:
@@ -27,4 +37,9 @@ jobs:
           labels: develop,automerge
           assignees: phuongtruongonpoint
           reviewers: phuongtruongonpoint
+
+      - uses: "pascalgn/automerge-action@v0.15.3"
+        name: automerge
+        env:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 

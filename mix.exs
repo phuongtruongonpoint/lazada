@@ -49,7 +49,10 @@ defmodule Lazada.MixProject do
       {:floki, "~> 0.26.0"},
       {:comeonin, "~> 4.0"},
       {:bcrypt_elixir, "~> 1.0"},
-      {:scrivener_ecto, "~> 2.0"}
+      {:scrivener_ecto, "~> 2.0"},
+
+      # csv
+      {:csv, "~> 2.4"}
     ]
   end
 

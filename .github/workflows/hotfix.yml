@@ -5,26 +5,7 @@ on:
       - main
     types: [opened]
 jobs:
-  hotfix-PR-integration:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: onpointvn/create-pull-request-action@v1
-        name: Create PR to integration
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch_prefix: hotfix
-          base_branch: integration
-          labels: integration,automerge
-          assignees: phuongtruongonpoint
-          reviewers: phuongtruongonpoint
-
-      - uses: "pascalgn/automerge-action@v0.15.3"
-        name: automerge
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
-  hotfix-PR-develop:
+  hotfix:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -34,12 +15,26 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch_prefix: hotfix
           base_branch: develop
-          labels: develop,automerge
+          labels: develop
+          assignees: phuongtruongonpoint
+          reviewers: phuongtruongonpoint
+      - uses: onpointvn/create-pull-request-action@v1
+        name: Create PR to integration
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch_prefix: hotfix
+          base_branch: integration
+          labels: integration
           assignees: phuongtruongonpoint
           reviewers: phuongtruongonpoint
 
-      - uses: "pascalgn/automerge-action@v0.15.3"
+  automerge:
+    needs: hotfix
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - id: automerge
         name: automerge
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
+        uses: "pascalgn/automerge-action@v0.15.3"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"

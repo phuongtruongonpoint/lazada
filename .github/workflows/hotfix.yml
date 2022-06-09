@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1.0.2
       - id: prtodevelop
-        uses: onpointvn/create-pull-request-action@v1
+        uses: phuongtruongonpoint/create-pull-request-action@v1
         name: Create PR to develop
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -19,7 +19,7 @@ jobs:
           labels: develop,automerge
           assignees: phuongtruongonpoint
           reviewers: phuongtruongonpoint
-      - uses: onpointvn/create-pull-request-action@v1.0.2
+      - uses: phuongtruongonpoint/create-pull-request-action@v1.0.2
         name: Create PR to integration
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

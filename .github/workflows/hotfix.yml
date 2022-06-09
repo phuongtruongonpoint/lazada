@@ -30,4 +30,4 @@ jobs:
           reviewers: phuongtruongonpoint
       - name: feedback
         run: |
-          echo "Pull request ${{ steps.prtodevelop.pullRequestNumber}}"
+          echo "Pull request ${{ steps.prtodevelop.outputs.pullRequestNumber}} ${{ steps.prtodevelop.outputs.number}}"

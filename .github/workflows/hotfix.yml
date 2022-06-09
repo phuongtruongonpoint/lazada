@@ -2,7 +2,7 @@ name: Create PR for hotfix
 on:
   pull_request:
     branches:
-      - master
+      - main
     types: [opened]
 jobs:
   hotfix:

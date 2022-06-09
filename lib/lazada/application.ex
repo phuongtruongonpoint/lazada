@@ -1,6 +1,6 @@
 defmodule Lazada.Application do
   # See https://hexdocs.pm/elixir/Application.html
-  # for more information on OTP Applications 1
+  # for more information on OTP Applications 3
   @moduledoc false
 
   use Application

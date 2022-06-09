@@ -9,8 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - id: prdevelop
-        uses: onpointvn/create-pull-request-action@v1
+      - uses: onpointvn/create-pull-request-action@v1
         name: Create PR to develop
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -29,17 +28,17 @@ jobs:
           assignees: phuongtruongonpoint
           reviewers: phuongtruongonpoint
 
-  automerge:
-    needs: hotfix
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - id: automerge
-        name: automerge
-        uses: "pascalgn/automerge-action@v0.15.3"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          pull_request: "83"
-
-      - name: feedback
-        run: echo "1 ${{steps.prdevelop}} ${{steps.automerge}}"
+#  automerge:
+#    needs: hotfix
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v1
+#      - id: automerge
+#        name: automerge
+#        uses: "pascalgn/automerge-action@v0.15.3"
+#        env:
+#          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+#          pull_request: "83"
+#
+#      - name: feedback
+#        run: echo "1 ${{steps.prdevelop}} ${{steps.automerge}}"

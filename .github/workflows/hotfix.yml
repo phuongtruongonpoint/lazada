@@ -15,7 +15,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch_prefix: hotfix
           base_branch: develop
-          labels: develop
+          labels: develop,automerge
           assignees: phuongtruongonpoint
           reviewers: phuongtruongonpoint
       - uses: onpointvn/create-pull-request-action@v1
@@ -24,6 +24,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch_prefix: hotfix
           base_branch: integration
-          labels: integration
+          labels: integration,automerge
           assignees: phuongtruongonpoint
           reviewers: phuongtruongonpoint

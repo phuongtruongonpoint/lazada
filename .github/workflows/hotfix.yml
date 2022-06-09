@@ -27,6 +27,7 @@ jobs:
           labels: integration,automerge
           assignees: phuongtruongonpoint
           reviewers: phuongtruongonpoint
+      - uses: actions/checkout@v1
       - uses: "pascalgn/automerge-action@v0.15.3"
         name: Auto merge
         env:

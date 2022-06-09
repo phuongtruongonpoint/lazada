@@ -1,6 +1,6 @@
 defmodule Lazada.Products do
   @moduledoc """
-  The Products context.
+  The Products context. 1
   """
 
   import Ecto.Query, warn: false

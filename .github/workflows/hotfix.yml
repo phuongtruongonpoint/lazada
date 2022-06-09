@@ -28,5 +28,6 @@ jobs:
           labels: integration,automerge
           assignees: phuongtruongonpoint
           reviewers: phuongtruongonpoint
+      - name: feedback
         run: |
           echo "Pull request ${{ steps.prtodevelop.outputs.pull_number}}"

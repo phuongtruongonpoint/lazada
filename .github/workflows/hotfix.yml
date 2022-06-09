@@ -27,3 +27,8 @@ jobs:
           labels: integration,automerge
           assignees: phuongtruongonpoint
           reviewers: phuongtruongonpoint
+      - uses: "pascalgn/automerge-action@v0.15.3"
+        name: Auto merge
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+

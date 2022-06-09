@@ -29,6 +29,6 @@ jobs:
           reviewers: phuongtruongonpoint
       - uses: "pascalgn/automerge-action@v0.15.3"
         name: Auto merge
-        with:
+        env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 

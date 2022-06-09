@@ -8,9 +8,9 @@ jobs:
   hotfix:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1.0.2
+      - uses: actions/checkout@v1
       - id: prtodevelop
-        uses: phuongtruongonpoint/create-pull-request-action@v1
+        uses: phuongtruongonpoint/create-pull-request-action@v1.0.2
         name: Create PR to develop
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

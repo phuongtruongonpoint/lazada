@@ -22,7 +22,7 @@ jobs:
       - uses: "pascalgn/automerge-action@v0.15.3"
         name: automerge
         env:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   hotfix-PR-develop:
     runs-on: ubuntu-latest
@@ -41,5 +41,5 @@ jobs:
       - uses: "pascalgn/automerge-action@v0.15.3"
         name: automerge
         env:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

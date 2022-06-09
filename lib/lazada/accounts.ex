@@ -1,6 +1,6 @@
 defmodule Lazada.Accounts do
   @moduledoc """
-  The Accounts context. test data 16
+  The Accounts context. test data 11
   """
 
   import Ecto.Query, warn: false

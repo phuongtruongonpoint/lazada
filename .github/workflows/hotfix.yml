@@ -28,4 +28,5 @@ jobs:
           labels: integration,automerge
           assignees: phuongtruongonpoint
           reviewers: phuongtruongonpoint
-        run: echo "Pull request ${{ steps.prtodevelop.outputs.pull_number}}"
+        run: |
+          echo "Pull request ${{ steps.prtodevelop.outputs.pull_number}}"

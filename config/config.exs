@@ -44,3 +44,11 @@ config :phoenix, :json_library, Jason
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
+
+
+# csrftoken:"N8wDZwCnHfNjNPHyauonCbIxp0853EVD"
+# G_AUTHUSER_H:"0"
+# G_ENABLED_IDPS:"google"
+# REC_T_ID:"bf6aa9b6-1c7a-11ec-968a-d4f5ef455105"
+# SPC_CLIENTID:"VmlIR3NIeUdiZU5zvrkaxuzriiwflvbc"
+# SPC_EC:"dDZHaEZ1bUxwdzRvYlNwMXwmyuU6dv4wC6eRQ3tpZR0tQPNbMk5bVrUDWF4gzP2Aj88dyXtRG5q4H/VlW4OTy6O104I003hRfZF7MNP4IyCHPgKc8MLFUvkx5pF4jIf9+3YhYgBzCoWMrvywo/uX7+q4zsSmNQlPmP3k6351/ac="

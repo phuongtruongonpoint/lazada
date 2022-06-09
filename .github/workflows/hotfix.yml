@@ -1,0 +1,29 @@
+name: Create PR for hotfix
+on:
+  pull_request:
+    branches:
+      - master
+    types: [opened]
+jobs:
+  hotfix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: onpointvn/create-pull-request-action@v1
+        name: Create PR to develop
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch_prefix: hotfix
+          base_branch: develop
+          labels: develop
+          assignees: phuongtruongonpoint
+          reviewers: phuongtruongonpoint
+      - uses: onpointvn/create-pull-request-action@v1
+        name: Create PR to integration
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch_prefix: hotfix
+          base_branch: integration
+          labels: integration
+          assignees: phuongtruongonpoint
+          reviewers: phuongtruongonpoint

@@ -8,7 +8,7 @@ jobs:
   hotfix:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v1.0.2
       - id: prtodevelop
         uses: onpointvn/create-pull-request-action@v1
         name: Create PR to develop
@@ -19,7 +19,7 @@ jobs:
           labels: develop,automerge
           assignees: phuongtruongonpoint
           reviewers: phuongtruongonpoint
-      - uses: onpointvn/create-pull-request-action@v1
+      - uses: onpointvn/create-pull-request-action@v1.0.2
         name: Create PR to integration
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -30,4 +30,4 @@ jobs:
           reviewers: phuongtruongonpoint
       - name: feedback
         run: |
-          echo "Pull request ${{ steps.prtodevelop.number}}"
+          echo "Pull request ${{ steps.prtodevelop.pullRequestNumber}}"

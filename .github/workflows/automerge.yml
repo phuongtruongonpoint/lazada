@@ -1,9 +1,9 @@
 name: automerge
 on:
-  workflow_run:
-    workflows: ["Create PR for hotfix"]
-    types:
-      - completed
+#  workflow_run:
+#    workflows: ["Create PR for hotfix"]
+#    types:
+#      - completed
   pull_request:
     types:
       - labeled
